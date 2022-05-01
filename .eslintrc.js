@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const prettierConfig = require("./.prettierrc");
 const packageJSON = require("./package.json");
 
@@ -118,16 +119,8 @@ module.exports = {
       },
     ],
 
-    // Enforce:
-    // - foo = 1 +
-    //         2;
-    // - foo = isSomething() ?
-    //         trueValue :
-    //         falseValue;
-    // - if (someCondition ||
-    //       otherCondition) {
-    //   }
-    "operator-linebreak": ["error", "after"],
+    // fix conflict with prettier
+    "operator-linebreak": ["off"],
 
     "padded-blocks": [
       "error",
@@ -171,7 +164,7 @@ module.exports = {
     ],
 
     // Always add 2 lines after every import block
-    "import/newline-after-import": ["error", { count: 2 }],
+    "import/newline-after-import": ["error", { count: 1 }],
 
     "no-restricted-imports": [
       "error",
