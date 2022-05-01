@@ -1,0 +1,102 @@
+{
+  // Debug
+  "debug.javascript.autoAttachFilter": "disabled",
+
+  // Editor - Format
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+
+  // Editor - Indentation
+  "editor.detectIndentation": true,
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2,
+
+  // Editor - Others
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+
+  // Git
+  "git.autofetch": true,
+  "git.confirmSync": false,
+
+  // Git Diff Editor
+  "diffEditor.ignoreTrimWhitespace": false,
+
+  // CSS
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[less]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // Javascript
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true
+  },
+
+  // JSON
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // Typescript
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true
+  },
+
+  // MarkdownLint
+  "markdownlint.config": {
+    "MD024": {
+      "siblings_only": true
+    },
+    // Allow punctuation marks (?!) in headers
+    "MD026": false
+  },
+
+  // Run on Save
+  "runOnSave.commands": [
+    //
+  ],
+
+  // Editor - Code
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+
+  // ESLint
+  "eslint.workingDirectories": ["."],
+
+  // Set stylelint config option. Note that when this option is enabled, stylelint doesn't load configuration files.
+  "stylelint.config": null,
+
+  // cSpell
+  "cSpell.words": [
+    //
+    "airbnb",
+    "antd",
+    "postcss",
+    "stylelint"
+  ]
+}

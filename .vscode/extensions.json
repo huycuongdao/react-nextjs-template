@@ -1,0 +1,34 @@
+{
+  "recommendations": [
+    // Git
+    "codezombiech.gitignore",
+    "eamodio.gitlens",
+
+    // All Languages
+    "esbenp.prettier-vscode",
+    "wmaurer.change-case",
+    "streetsidesoftware.code-spell-checker",
+    "pucelle.run-on-save",
+
+    "pflannery.vscode-versionlens",
+
+    // Eslint
+    "dbaeumer.vscode-eslint",
+
+    // JSX
+    "formulahendry.auto-close-tag",
+    "formulahendry.auto-rename-tag",
+    "dsznajder.es7-react-js-snippets",
+
+    // Stylelint
+    "stylelint.vscode-stylelint",
+
+    // JSON
+    "eriklynd.json-tools",
+
+    // Markdown
+    "DavidAnson.vscode-markdownlint",
+    "yzhang.markdown-all-in-one",
+    "bierner.markdown-mermaid"
+  ]
+}
