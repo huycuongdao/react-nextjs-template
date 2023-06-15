@@ -164,18 +164,6 @@ module.exports = {
     // Always add 2 lines after every import block
     "import/newline-after-import": ["error", { count: 1 }],
 
-    "no-restricted-imports": [
-      "error",
-      {
-        patterns: [
-          {
-            group: ["inkr-node-filesystem-helper/**"],
-            message: "Please import from helpers/filesystem",
-          },
-        ],
-      },
-    ],
-
     "import/no-cycle": "error",
 
     // Conflicts with "sort-imports"
