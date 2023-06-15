@@ -13,7 +13,9 @@
     "build": "rm -rf ./.next && NODE_OPTIONS=\"--max-old-space-size=8196\" next build --debug",
     "dev": "next dev",
     "start": "next start",
-    "test": "npm run cypress:run"
+    "test": "npm run cypress:run",
+    "lint": "eslint --color",
+    "prepare": "husky install"
   },
   "author": "cuong.dao",
   "license": "MIT",
@@ -40,6 +42,8 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "eslint-plugin-unused-imports": "^2.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.2",
     "prettier": "^2.8.8",
     "typescript": "^5.1.3"
   }
