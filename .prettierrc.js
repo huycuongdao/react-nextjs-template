@@ -1,6 +1,4 @@
-
 module.exports = {
-
   // -> use less screen width
   tabWidth: 2,
 
@@ -40,4 +38,6 @@ module.exports = {
 
   // Only "\n" -> simpler line-splitting in scripts
   endOfLine: "lf",
+
+  printWidth: 120,
 };

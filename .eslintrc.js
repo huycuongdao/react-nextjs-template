@@ -19,29 +19,10 @@ module.exports = {
 
     "plugin:@typescript-eslint/recommended",
 
-    // 'plugin:prettier/recommended',
-    // Notes: This equals all these:
-    // - "extends": ["prettier"]
-    // - "plugins": ["prettier"],
-    // - "rules": { "prettier/prettier": "error" }
-    // WHY DON'T?
-    // It breaks whenever the plugin and rule are added (extend doesn't matter).
-    // - prettier-vscode uses prettier-eslint but doesn't respect this config,
-    //   while prettier-eslint CLI does.
-    // - eslint-vscode with auto-fix works but always changes result every save.
-    //   This happens with conflicting rules like 'array-bracket-newline'.
-
     "plugin:css-modules/recommended",
 
     "plugin:react-hooks/recommended",
   ],
-
-  parser: "@typescript-eslint/parser", // default: babel-eslint
-  parserOptions: {
-    ecmaFeatures: { jsx: true },
-    ecmaVersion: 2018,
-    sourceType: "module",
-  },
 
   plugins: [
     "@typescript-eslint",
@@ -49,9 +30,6 @@ module.exports = {
     "css-modules",
 
     "prettier",
-    // WHY DON'T? See "extends".
-    // Notes: Disabling this with the rule on causes
-    //   "Definition for rule 'prettier/prettier' was not found."
 
     "react",
 
@@ -63,6 +41,13 @@ module.exports = {
 
     "cypress",
   ],
+
+  parser: "@typescript-eslint/parser",
+  parserOptions: {
+    ecmaFeatures: { jsx: true },
+    ecmaVersion: 2020,
+    sourceType: "module",
+  },
 
   rules: {
     // ==> ESLint
@@ -76,9 +61,22 @@ module.exports = {
     // Allows "_foo" - classes' private vars
     "no-underscore-dangle": "off",
 
-    // - Our code uses double quotes a lot -> less diff
-    // - Convert from JSON -> JS with less diff
     quotes: ["error", "double"],
+
+    // Max-len follows Prettier config
+    "max-len": [
+      "warn",
+      {
+        ignoreUrls: true,
+        ignoreComments: false,
+        ignoreRegExpLiterals: true,
+        ignoreStrings: true,
+        ignoreTemplateLiterals: true,
+        code: prettierConfig.printWidth,
+        tabWidth: prettierConfig.tabWidth,
+        ignoreTrailingComments: false,
+      },
+    ],
 
     "object-curly-newline": [
       "error",
@@ -260,7 +258,15 @@ module.exports = {
     "@typescript-eslint/no-shadow": "error",
 
     "no-use-before-define": "off", // Why? https://stackoverflow.com/a/64024916
-    "@typescript-eslint/no-use-before-define": "error",
+    "@typescript-eslint/no-use-before-define": [
+      "error",
+      {
+        // Allow functions to be defined before they are used; because function is hoisted, so this is safe
+        functions: false,
+        typedefs: false, // Allow typedefs to be defined before they are used
+        variables: false, // false check when upper scope only, because variables are hoisted
+      },
+    ],
 
     // Use correct typings or unknown
     "@typescript-eslint/no-explicit-any": "error",
@@ -302,11 +308,7 @@ module.exports = {
     react: {
       // Detect React version only if it is installed
       // @ts-ignore - "packageJSON.dependencies" may not have "react"
-      version:
-        typeof packageJSON.dependencies !== "undefined" &&
-        packageJSON.dependencies.react
-          ? "detect"
-          : "latest",
+      version: typeof packageJSON.dependencies !== "undefined" && packageJSON.dependencies.react ? "detect" : "latest",
     },
   },
 };
